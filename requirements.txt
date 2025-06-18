@@ -3,5 +3,4 @@ uvicorn
 pydantic
 requests
 numpy
-sqlite3-binary
 python-multipart
