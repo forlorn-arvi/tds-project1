@@ -6,8 +6,17 @@ import requests
 import numpy as np
 import json
 from typing import List, Optional
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # 👈 Allow all origins (for development)
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 DB_PATH = r"C:\\Users\\aravi\\Downloads\\tds-project1\\tds_docs.db"
 EMBEDDING_URL = "https://aipipe.org/openai/v1/embeddings"
